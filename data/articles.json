@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "new title",
+    "text": "updated text",
+    "date": 22,
+    "author": "updated author",
+    "comments": [
+      {
+        "id": 1732347789482,
+        "articleId": 1,
+        "text": "new test comment",
+        "date": 23,
+        "author": "me"
+      }
+    ]
+  }
+]
