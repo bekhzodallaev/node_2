@@ -12,29 +12,13 @@
         "text": "new test comment",
         "date": 23,
         "author": "me"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "New Article",
-    "text": "This is the content of the new article.",
-    "date": 25,
-    "author": "John Doe",
-    "comments": [
-      {
-        "id": 1732663858779,
-        "articleId": 2,
-        "text": "Great article!",
-        "date": 25,
-        "author": "Jane Doe"
       },
       {
-        "id": 1732663858376,
-        "articleId": 2,
-        "text": "Looking forward to more!",
-        "date": 26,
-        "author": "Alice"
+        "id": 1732347789483,
+        "articleId": 1,
+        "text": "This is a new comment",
+        "date": 30,
+        "author": "Jane Doe"
       }
     ]
   }

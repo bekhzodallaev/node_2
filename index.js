@@ -2,6 +2,8 @@ const http = require('http');
 const { readAll, readArticle } = require('./handlers/articles/article-read');
 const { createArticle } = require('./handlers/articles/article-create');
 const { updateArticle } = require('./handlers/articles/article-update');
+const { createComment } = require('./handlers/comments/comment-create');
+const { deleteArticle } = require('./handlers/articles/article-delete');
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -15,6 +17,10 @@ const server = http.createServer((req, res) => {
     createArticle(req, res);
   } else if (req.url === '/api/articles/update' && req.method === 'PUT') {
     updateArticle(req, res);
+  } else if (req.url === '/api/comments/create' && req.method === 'POST') {
+    createComment(req, res);
+  } else if (req.url === '/api/articles/delete' && req.method === 'DELETE') {
+    deleteArticle(req, res);
   }
 });
 server.listen(port, hostname, () => {
