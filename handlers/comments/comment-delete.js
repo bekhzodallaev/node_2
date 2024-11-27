@@ -10,7 +10,6 @@ function remove(commentId) {
         (comment) => comment.id === commentId
       );
       if (commentIndex !== -1) {
-        // Remove the comment
         article.comments.splice(commentIndex, 1);
         commentFound = true;
       }
@@ -30,9 +29,9 @@ function remove(commentId) {
 async function deleteComment(req, res) {
   try {
     const body = await getPostData(req);
-    const { id } = JSON.parse(body); // Comment ID
+    const { id } = JSON.parse(body); 
 
-    await remove(id); // Remove the comment by ID
+    await remove(id); 
 
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ message: 'Comment deleted successfully' }));

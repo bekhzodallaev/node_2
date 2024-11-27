@@ -1,10 +1,29 @@
+// handlers/articles/article-create.js
 const { getPostData, writeDataToFile } = require('../../utils/fileOperations');
+const validateArticleData = require('../../validators/articleValidator');
 let articles = require('../../data/articles.json');
 
 async function createArticle(req, res) {
   try {
     const body = await getPostData(req);
     const { title, text, date, author, comments } = JSON.parse(body);
+    const validationErrors = validateArticleData({
+      title,
+      text,
+      date,
+      author,
+      comments,
+    });
+
+    if (validationErrors) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      return res.end(
+        JSON.stringify({
+          message: 'Validation failed',
+          errors: validationErrors,
+        })
+      );
+    }
 
     const newArticleId =
       articles.length > 0 ? articles[articles.length - 1].id + 1 : 1;
@@ -14,6 +33,7 @@ async function createArticle(req, res) {
       articleId: newArticleId,
       ...comment,
     }));
+
     const newArticle = {
       id: newArticleId,
       title,
@@ -22,8 +42,10 @@ async function createArticle(req, res) {
       author,
       comments: processedComments,
     };
+
     articles.push(newArticle);
     writeDataToFile('../data/articles.json', articles);
+
     res.writeHead(201, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(newArticle));
   } catch (error) {

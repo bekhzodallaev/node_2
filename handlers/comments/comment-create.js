@@ -1,16 +1,21 @@
 const { getPostData, writeDataToFile } = require('../../utils/fileOperations');
 const Articles = require('../../data/articles.json');
+const validateCommentData = require('../../validators/commentValidator');
 
 async function createComment(req, res) {
   try {
     const body = await getPostData(req);
     const { articleId, text, date, author } = JSON.parse(body);
 
-    if (!text || !author) {
+    const validationErrors = validateCommentData({
+      articleId,
+      text,
+      date,
+      author,
+    });
+    if (validationErrors) {
       res.writeHead(400, { 'Content-Type': 'application/json' });
-      res.end(
-        JSON.stringify({ message: 'Missing required fields: text or author' })
-      );
+      res.end(JSON.stringify({ message: validationErrors.join(', ') }));
       return;
     }
 
@@ -18,7 +23,9 @@ async function createComment(req, res) {
     if (!article) {
       res.writeHead(404, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ message: 'Article Not Found' }));
+      return;
     }
+
     const newCommentId =
       article.comments.length > 0
         ? article.comments[article.comments.length - 1].id + 1
@@ -39,7 +46,7 @@ async function createComment(req, res) {
   } catch (error) {
     console.log(error);
     res.writeHead(500, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: 'Error creating an article' }));
+    res.end(JSON.stringify({ message: 'Error creating a comment' }));
   }
 }
 

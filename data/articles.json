@@ -1,17 +1,40 @@
 [
   {
     "id": 1,
-    "title": "Updated Title",
-    "text": "Updated Text",
-    "date": 22,
-    "author": "updated author",
+    "title": "Updated Title for Node.js",
+    "text": "This article has been updated with more information on Node.js.",
+    "date": "2024-11-28T12:30:00Z",
+    "author": "Updated Author",
     "comments": [
       {
         "id": 1732347789482,
         "articleId": 1,
-        "text": "new test comment",
-        "date": 23,
-        "author": "me"
+        "text": "Updated comment text",
+        "date": "2024-11-28T12:40:00Z",
+        "author": "Updated Comment Author"
+      },
+      {
+        "id": 1732347789483,
+        "articleId": 1,
+        "text": "This is a new comment on the article.",
+        "date": "2024-11-28T13:00:00Z",
+        "author": "Commenter Name"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Introduction to Node.js",
+    "text": "This article explains the basics of Node.js, including its event-driven architecture and non-blocking I/O.",
+    "date": "2024-11-27T12:00:00Z",
+    "author": "John Doe",
+    "comments": [
+      {
+        "id": 1,
+        "articleId": 2,
+        "text": "This is a new",
+        "date": "2024-11-28T13:00:00Z",
+        "author": "Bekhzod Allaev"
       }
     ]
   }

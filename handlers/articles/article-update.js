@@ -1,10 +1,32 @@
+// handlers/articles/article-update.js
 const { getPostData, writeDataToFile } = require('../../utils/fileOperations');
+const validateArticleData = require('../../validators/articleValidator');
 let Articles = require('../../data/articles.json');
 
 async function updateArticle(req, res) {
   try {
     const body = await getPostData(req);
     const { id, title, text, date, author, comments } = JSON.parse(body);
+
+    const validationErrors = validateArticleData({
+      id,
+      title,
+      text,
+      date,
+      author,
+      comments,
+    });
+
+    if (validationErrors) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      return res.end(
+        JSON.stringify({
+          message: 'Validation failed',
+          errors: validationErrors,
+        })
+      );
+    }
+
     const articleIndex = Articles.findIndex((article) => article.id === id);
 
     if (articleIndex === -1) {
