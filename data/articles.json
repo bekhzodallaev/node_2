@@ -12,13 +12,6 @@
         "text": "new test comment",
         "date": 23,
         "author": "me"
-      },
-      {
-        "id": 1732347789483,
-        "articleId": 1,
-        "text": "This is a new comment",
-        "date": 30,
-        "author": "Jane Doe"
       }
     ]
   }
