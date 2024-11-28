@@ -1,0 +1,88 @@
+{
+  "timestamp": "2024-11-28T11:33:45.053Z",
+  "method": "GET",
+  "url": "/api/articles/readall",
+  "body": null
+}
+
+{
+  "timestamp": "2024-11-28T11:34:47.779Z",
+  "method": "POST",
+  "url": "/api/articles/read",
+  "body": {
+    "id": 1
+  }
+}
+
+{
+  "timestamp": "2024-11-28T11:36:12.948Z",
+  "method": "POST",
+  "url": "/api/articles/create",
+  "body": {
+    "title": "Exploring Express.js",
+    "text": "Express.js is a minimal web framework for Node.js that simplifies the process of building web applications.",
+    "date": "2024-11-27T14:00:00Z",
+    "author": "Jane Smith",
+    "comments": [
+      {
+        "text": "Great article! Looking forward to learning more.",
+        "date": "2024-11-27T14:05:00Z",
+        "author": "Alice"
+      },
+      {
+        "text": "Very informative, thanks for sharing!",
+        "date": "2024-11-27T14:10:00Z",
+        "author": "Bob"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2024-11-28T11:40:41.642Z",
+  "method": "POST",
+  "url": "/api/articles/create",
+  "body": {
+    "title": "Exploring Express.js",
+    "text": "Express.js is a minimal web framework for Node.js that simplifies the process of building web applications.",
+    "date": "2024-11-27T14:00:00Z",
+    "author": "Jane Smith",
+    "comments": [
+      {
+        "text": "Great article! Looking forward to learning more.",
+        "date": "2024-11-27T14:05:00Z",
+        "author": "Alice"
+      },
+      {
+        "text": "Very informative, thanks for sharing!",
+        "date": "2024-11-27T14:10:00Z",
+        "author": "Bob"
+      }
+    ]
+  }
+}
+
+{
+  "timestamp": "2024-11-28T11:49:16.012Z",
+  "method": "POST",
+  "url": "/api/articles/create",
+  "body": {
+    "title": "Understanding REST APIs",
+    "text": "REST APIs are a standardized way to enable communication between clients and servers. They rely on HTTP methods like GET, POST, PUT, and DELETE.",
+    "date": "2024-11-28T12:00:00Z",
+    "author": "Sophia Johnson",
+    "comments": [
+      {
+        "text": "This explanation really clarified REST APIs for me. Thanks!",
+        "date": "2024-11-28T12:30:00Z",
+        "author": "Liam"
+      },
+      {
+        "text": "Great article! Could you add an example for PUT requests?",
+        "date": "2024-11-28T12:45:00Z",
+        "author": "Olivia"
+      }
+    ]
+  }
+}
+
